@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -24,6 +25,9 @@ public class EmailAuthCode {
     @Getter
     @Setter
     private String authCode;
+
+    @CreationTimestamp
+    private Timestamp createDate;
 
     @UpdateTimestamp
     private Timestamp updatedDate;
