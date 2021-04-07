@@ -1,5 +1,6 @@
-package com.harrybro.email.springemailauthentication.mail;
+package com.harrybro.email.springemailauthentication.mail.service;
 
+import com.harrybro.email.springemailauthentication.mail.domain.EmailSubject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -14,12 +15,13 @@ public class EmailUtil {
 
     private final JavaMailSender javaMailSender;
 
-    public void sendEmail(String toAddress, String subject, String body) {
+    public void sendEmail(String toAddress, EmailSubject subject, String body) {
+
         MimeMessage message = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
         try {
             helper.setTo(toAddress);
-            helper.setSubject(subject);
+            helper.setSubject(subject.getSubject());
             helper.setText(body);
         } catch (MessagingException e) {
             e.printStackTrace();
