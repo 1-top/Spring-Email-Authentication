@@ -6,6 +6,7 @@
 - 언어: `Java`
 - 프레임워크: `Spring Boot`
 - 라이브러리: `Lombok`, `Validation`, `Spring Data JPA`, `Spring Mail`
+- 빌드툴: `Maven`
 
 ## 기능
 ### 1. Email 인증 코드 요청
